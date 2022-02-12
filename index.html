@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>codes html/css/js</title>
+    <style>
+        #codeList {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>List of codes</h2>
+    </header>
+    <nav>
+        <a href code="codes/ex0.html">00 - test</a> |
+    </nav>
+    <section id="codeList"></section>
+
+    <script>
+        document.querySelectorAll('[code]').forEach(link => {
+            const codeList = document.getElementById('codeList')
+            
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('code'))
+                    .then(resp => resp.text())
+                    .then(html => codeList.innerHTML = html)
+                }
+                const script = document.createElement("script")
+                script.src = 'codes/ex0.js'
+                document.body.appendChild(script);
+        })
+        
+
+    </script>
+</body>
+</html>
