@@ -17,11 +17,12 @@
     </header>
     <nav>
         <a href code="codes/ex0.html">00 - test</a> |
+        <a href code="codes/ex1.html">01 - git</a> |
     </nav>
     <section id="codeList"></section>
 
     <script>
-        document.querySelectorAll('[code]').forEach(link => {
+        document.querySelectorAll('[code]').forEach((link, i) => {
             const codeList = document.getElementById('codeList')
             
             link.onclick = function(e) {
@@ -31,7 +32,7 @@
                     .then(html => codeList.innerHTML = html)
                 }
                 const script = document.createElement("script")
-                script.src = 'codes/ex0.js'
+                script.src = `codes/ex${i}.js`
                 document.body.appendChild(script);
         })
         
