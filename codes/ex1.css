@@ -1,0 +1,22 @@
+#ex1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#listUsers {
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 10px 0px;
+}
+#listUsers > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+#graphResult {
+    margin-top: 10px;
+}

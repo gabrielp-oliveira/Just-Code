@@ -6,30 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>codes html/css/js</title>
     <style>
-        #codeList {
-            padding: 30px 0px;
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            background-color: rgb(247, 247, 247);
+        }
+        #navMenu {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        #navMenu > a {
+            margin: 0px 5px;
+        }
+        #mainContent {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+        #mainContent > div{
+            max-width: 100%;
+
         }
     </style>
+    <link rel="stylesheet" href="codes/ex1.css">
+    <link rel="stylesheet" href="codes/ex2.css">
 </head>
 <body>
     <header>
         <h2>List of codes</h2>
     </header>
-    <nav>
-        <a href code="codes/ex0.html">00 - test</a> |
-        <a href code="codes/ex1.html">01 - git</a> |
+    <nav id="navMenu">
+        <a href code="codes/ex0.html">00 - test</a>
+        <a href code="codes/ex1.html">01 - git</a>
+        <a href code="codes/ex2.html">02 - todo List</a>
     </nav>
-    <section id="codeList"></section>
+    <section id="mainContent"></section>
 
     <script>
         document.querySelectorAll('[code]').forEach((link, i) => {
-            const codeList = document.getElementById('codeList')
+            const mainContent = document.getElementById('mainContent')
             
             link.onclick = function(e) {
                 e.preventDefault()
                 fetch(link.getAttribute('code'))
                     .then(resp => resp.text())
-                    .then(html => codeList.innerHTML = html)
+                    .then(html => mainContent.innerHTML = html)
+                    .then(() => document.querySelectorAll('[code]').forEach((el) => {
+                        el.style.backgroundColor = 'transparent'
+                    }))
+                    .then(() => {
+                        link.style.backgroundColor = 'rgb(187, 187, 187)'
+                    })
+                    
                 }
                 const script = document.createElement("script")
                 script.src = `codes/ex${i}.js`

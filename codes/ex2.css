@@ -1,0 +1,74 @@
+.checked {
+    background: rgb(201, 80, 80)!important;
+    color: #fff;
+    text-decoration: line-through;
+  }
+
+#todoList {
+    margin-top: 10px;
+}
+#todoList > li{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    margin: 5px 0px;    
+    border-radius: 3px;
+}
+#todoList > li>div:first-child{
+    background-color:  rgba(134, 230, 185, 0.3);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding: 10px 5px;
+    padding-left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+#todoList > li>div:last-child{
+    background-color:  rgba(230, 134, 134, 0.3);
+    font-size: 22px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+#todoList > li>div:last-child:hover{
+    background-color:  rgba(230, 134, 134, 0.5);
+    transition: 200ms;
+}
+#todoList > li>div:first-child:hover{
+    background-color:  rgba(134, 230, 185, 0.5);
+    transition: 200ms;
+}
+#todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#todo > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(216, 216, 216);
+    width: 400px;
+    height: 100px;
+    border-radius: 5px;
+}
+#todo > div > input {
+    width: 80%;
+    height: 30px;
+    font-size: 18px;
+}
+#todo > h4 {
+    background-color: rgba(216, 216, 216);
+    padding: 5px 20px;
+}
+.addBtn {
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 5px;
+    background-color: rgb(218, 247, 237);
+    margin-top: 5px;
+    cursor: pointer;
+}
