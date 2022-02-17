@@ -14,7 +14,6 @@ async function getWord() {
         .then((txt) => {
             return txt
         })
-    console.log(req)
     return await req
 }
 
@@ -93,7 +92,6 @@ function tryWord() {
             children[0].select()
             attempts.append(cont)
             word = []
-            console.log(attempts.children)
             for (let i = 0; i < attempts.children.length; i++) {
                 attempts.children[i].remove()
             };
