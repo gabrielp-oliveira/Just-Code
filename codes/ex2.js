@@ -38,5 +38,4 @@ function newTodoItem(){
         todoList.appendChild(li);
     }
     inputValue.value = ''
-    console.log(inputValue.value)
 }

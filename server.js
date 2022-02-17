@@ -13,6 +13,5 @@ app.get('/',(req, res) => {
 app.get('/var',(req, res) => {
     res.send(process.env)
 })
-console.log(process.env.EX3_X_RAPIDAPI_HOST)
 
 server.listen(process.env.PORT || 8080, console.log('server started'))
